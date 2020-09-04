@@ -26,6 +26,8 @@ export default class CreateUser extends Component {
         const user = {
             username: this.state.username
         }
+
+        //Commits so i can commit
     
         console.log(user)
 
