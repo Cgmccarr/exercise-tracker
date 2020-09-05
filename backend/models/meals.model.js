@@ -6,7 +6,7 @@ const mealsSchema = new Schema({
     food: {type: String, required: true},
     carbs: {type: Number, required: true},
     protein: {type: Number, required: true},
-    carbs: {type: Number, required: true},
+    fats: {type: Number, required: true},
     fiber: {type: Number, required: false},
 }, {
     timestamps: true
