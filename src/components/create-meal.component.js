@@ -27,8 +27,7 @@ componentDidMount() {
         .then(response => {
             if (response.data.length > 0){
                 this.setState({
-                    meals: response.data.map(meals => meals.food),
-                    food: response.data[0].food
+                    meals: response.data.map(meals => meals.food)
                 })
             }
         })
@@ -81,6 +80,68 @@ onSubmit(e) {
         .then(res => console.log(res.data));
 
     window.location = '/';
+}
+
+render() {
+    return(
+        <div>
+            <h3>Create Meal Log</h3>
+            <form onSubmit={this.onSubmit}>
+                <div className="form-group">
+                    <label>Food</label>
+                    <input type="text"
+                        required
+                        className="form-control"
+                        value={this.state.food}
+                        onChange={this.onChangeFood}
+                    />
+                </div>
+                <div>
+                    <label>Carbs</label>
+                    <input type="text"
+                        required
+                        className="form-control"
+                        value={this.state.carbs}
+                        onChange={this.onChangeCarbs}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Protein</label>
+                    <input type="text"
+                        required
+                        className="form-control"
+                        value={this.state.protein}
+                        onChange={this.onChangeProtein}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Fats</label>
+                    <input type="text"
+                        required
+                        className="form-control"
+                        value={this.state.fats}
+                        onChange={this.onChangeFats}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Fiber</label>
+                    <input type="text"
+                        required
+                        className="form-control"
+                        value={this.state.fiber}
+                        onChange={this.onChangeFiber}
+                    />
+                </div>
+                <div className="form-group">
+                    <input
+                        type="submit"
+                        value="Create Meal Log"
+                        className="btn btn-primary"
+                    />
+                </div>
+            </form>
+        </div>
+    )
 }
 
 }

@@ -106,8 +106,8 @@ onSubmit(e) {
                     </div>
                     <div className="form-group">
                         <label>Duration (in minutes):</label>
-                        <input
-                            type="text"
+                        <input type="text"
+                        required
                             className="form-control"
                             value={this.state.duration}
                             onChange={this.onChangeDuration}
